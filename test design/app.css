@@ -1,0 +1,153 @@
+/* =============================================================
+   Greens — Vegan diet logging app
+   App-specific tokens layered on Wanted Design System
+   ============================================================= */
+
+:root {
+  /* Greens brand — soft, natural green family */
+  --greens-50:  #ecf9f1;   /* very light leaf */
+  --greens-100: #d6f0df;
+  --greens-200: #a8e0bc;
+  --greens-300: #75cd96;
+  --greens-400: #4ab873;
+  --greens-500: #2ea65c;   /* primary brand green */
+  --greens-600: #1f8c4a;
+  --greens-700: #166e3a;
+  --greens-800: #0f4f29;
+
+  /* Nutrient ring colors — friendly, distinct */
+  --n-protein: #2ea65c;    /* green — protein */
+  --n-iron:    #d2562b;    /* terracotta — iron */
+  --n-b12:     #f5a623;    /* warm amber — b12 */
+
+  --n-protein-soft: rgba(46, 166, 92, 0.12);
+  --n-iron-soft:    rgba(210, 86, 43, 0.12);
+  --n-b12-soft:     rgba(245, 166, 35, 0.12);
+
+  /* Soft & friendly = larger radii than default Wanted */
+  --r-card: 24px;
+  --r-pill: 999px;
+
+  /* Cream surface variant for the soft-friendly direction */
+  --bg-cream: #fbfaf6;
+  --bg-soft-green: #f4faf6;
+}
+
+/* override page background to feel softer */
+html, body {
+  background: var(--bg-cream);
+  color: var(--color-fg-neutral-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === App-wide reusable bits === */
+
+.greens-card {
+  background: #fff;
+  border-radius: var(--r-card);
+  border: 1px solid var(--color-line-normal);
+  padding: 20px;
+}
+
+.greens-card-flat {
+  background: #fff;
+  border-radius: var(--r-card);
+  padding: 20px;
+}
+
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 28px; padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.0252em;
+  font-family: var(--font-primary);
+  white-space: nowrap;
+}
+
+.chip-vegan {
+  background: var(--greens-50);
+  color: var(--greens-700);
+}
+
+.chip-soft {
+  background: var(--color-bg-neutral-tertiary);
+  color: var(--color-fg-neutral-strong);
+}
+
+/* button reset */
+button {
+  font-family: var(--font-primary);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+}
+
+/* tabular numbers for stats */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* generic transition */
+.smooth { transition: 200ms var(--ease-standard); }
+
+/* hide scrollbar but keep scroll */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* press feedback on tappables */
+.tappable { transition: opacity 120ms ease; cursor: pointer; }
+.tappable:active { opacity: 0.6; }
+
+/* avatar */
+.avatar {
+  width: 40px; height: 40px; border-radius: 999px;
+  background: linear-gradient(135deg, var(--greens-300), var(--greens-500));
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 700; font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* progress bar */
+.progress {
+  height: 8px; border-radius: 999px;
+  background: var(--color-bg-neutral-alternative);
+  overflow: hidden;
+  position: relative;
+}
+.progress > .bar {
+  height: 100%; border-radius: 999px;
+  background: var(--greens-500);
+  transition: width 400ms var(--ease-standard);
+}
+
+/* segmented control */
+.seg {
+  display: inline-flex;
+  background: var(--color-bg-neutral-tertiary);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+}
+.seg button {
+  height: 32px; padding: 0 14px;
+  border-radius: 999px;
+  font-size: 13px; font-weight: 600;
+  color: var(--color-fg-neutral-alternative);
+  letter-spacing: 0.0145em;
+  transition: 150ms var(--ease-standard);
+}
+.seg button.on {
+  background: #fff;
+  color: var(--color-fg-neutral-primary);
+  box-shadow: 0 1px 2px rgba(23,23,23,0.06);
+}
+
+/* divider */
+.hr {
+  height: 1px;
+  background: var(--color-line-normal);
+}

@@ -1,0 +1,401 @@
+/* ============================================================
+   Wanted Design System — colors & type tokens
+   Reconstructed from the public Wanted Design Library Figma.
+   ============================================================ */
+
+/* -------- Fonts: real Pretendard (uploaded) + Manrope as Wanted Sans fallback -------- */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@font-face { font-family: "Pretendard"; font-weight: 100; font-style: normal; font-display: swap; src: url("fonts/Pretendard-Thin.otf") format("opentype"); }
+@font-face { font-family: "Pretendard"; font-weight: 200; font-style: normal; font-display: swap; src: url("fonts/Pretendard-ExtraLight.otf") format("opentype"); }
+@font-face { font-family: "Pretendard"; font-weight: 300; font-style: normal; font-display: swap; src: url("fonts/Pretendard-Light.otf") format("opentype"); }
+@font-face { font-family: "Pretendard"; font-weight: 400; font-style: normal; font-display: swap; src: url("fonts/Pretendard-Regular.otf") format("opentype"); }
+@font-face { font-family: "Pretendard"; font-weight: 500; font-style: normal; font-display: swap; src: url("fonts/Pretendard-Medium.otf") format("opentype"); }
+@font-face { font-family: "Pretendard"; font-weight: 600; font-style: normal; font-display: swap; src: url("fonts/Pretendard-SemiBold.otf") format("opentype"); }
+@font-face { font-family: "Pretendard"; font-weight: 700; font-style: normal; font-display: swap; src: url("fonts/Pretendard-Bold.otf") format("opentype"); }
+@font-face { font-family: "Pretendard"; font-weight: 800; font-style: normal; font-display: swap; src: url("fonts/Pretendard-ExtraBold.otf") format("opentype"); }
+@font-face { font-family: "Pretendard"; font-weight: 900; font-style: normal; font-display: swap; src: url("fonts/Pretendard-Black.otf") format("opentype"); }
+
+:root {
+  /* === Atomic palette === */
+
+  /* Common */
+  --color-atomic-common-100: #ffffff;
+  --color-atomic-common-0:   #000000;
+
+  /* Neutral (warm-ish, fewer steps) */
+  --color-atomic-neutral-99: #f7f7f7;
+  --color-atomic-neutral-95: #dcdcdc;
+  --color-atomic-neutral-90: #c4c4c4;
+  --color-atomic-neutral-85: #b0b0b0;
+  --color-atomic-neutral-80: #9b9b9b;
+  --color-atomic-neutral-75: #8a8a8a;
+  --color-atomic-neutral-70: #737373;
+  --color-atomic-neutral-60: #5c5c5c;
+  --color-atomic-neutral-50: #474747;
+  --color-atomic-neutral-40: #303030;
+  --color-atomic-neutral-35: #2a2a2a;
+  --color-atomic-neutral-25: #1c1c1c;
+  --color-atomic-neutral-20: #171717;
+  --color-atomic-neutral-15: #0f0f0f;
+
+  /* Cool neutral (the workhorse, slightly blue-shifted) */
+  --color-atomic-coolNeutral-99: #f7f7f8;
+  --color-atomic-coolNeutral-97: #f4f4f5;
+  --color-atomic-coolNeutral-95: #eaebec;
+  --color-atomic-coolNeutral-92: #e1e2e4;
+  --color-atomic-coolNeutral-90: #dbdcdf;
+  --color-atomic-coolNeutral-80: #c2c4c8;
+  --color-atomic-coolNeutral-70: #aeb0b6;
+  --color-atomic-coolNeutral-60: #989ba2;
+  --color-atomic-coolNeutral-55: #878a93;
+  --color-atomic-coolNeutral-50: #70737c;
+  --color-atomic-coolNeutral-40: #5a5c63;
+  --color-atomic-coolNeutral-30: #46474c;
+  --color-atomic-coolNeutral-25: #37383c;
+  --color-atomic-coolNeutral-22: #333438;
+  --color-atomic-coolNeutral-20: #2e2f33;
+  --color-atomic-coolNeutral-18: #292a2d;
+  --color-atomic-coolNeutral-15: #212225;
+  --color-atomic-coolNeutral-12: #1b1c1e;
+  --color-atomic-coolNeutral-10: #171719;
+  --color-atomic-coolNeutral-8:  #141415;
+  --color-atomic-coolNeutral-5:  #0f0f10;
+
+  /* Blue (primary) */
+  --color-atomic-blue-99: #f7fbff;
+  --color-atomic-blue-95: #eaf2fe;
+  --color-atomic-blue-90: #c9defe;
+  --color-atomic-blue-80: #9ec5ff;
+  --color-atomic-blue-70: #69a5ff;
+  --color-atomic-blue-65: #4f95ff;
+  --color-atomic-blue-60: #3385ff;
+  --color-atomic-blue-55: #1a75ff;
+  --color-atomic-blue-50: #0066ff;
+  --color-atomic-blue-45: #005eeb;
+  --color-atomic-blue-40: #0054d1;
+  --color-atomic-blue-30: #003e9c;
+  --color-atomic-blue-20: #002966;
+  --color-atomic-blue-10: #001536;
+
+  /* Red (negative / error) */
+  --color-atomic-red-99: #fffafa;
+  --color-atomic-red-95: #feecec;
+  --color-atomic-red-90: #fed5d5;
+  --color-atomic-red-80: #ffb5b5;
+  --color-atomic-red-70: #ff8c8c;
+  --color-atomic-red-60: #ff6363;
+  --color-atomic-red-50: #ff4242;
+  --color-atomic-red-45: #e52222;
+  --color-atomic-red-40: #b20c0c;
+  --color-atomic-red-30: #750404;
+  --color-atomic-red-15: #3b0101;
+
+  /* Green (positive / success) */
+  --color-atomic-green-99: #f2fff6;
+  --color-atomic-green-95: #d9ffe6;
+  --color-atomic-green-90: #acfcc7;
+  --color-atomic-green-80: #7df5a5;
+  --color-atomic-green-70: #49e57d;
+  --color-atomic-green-60: #1ed45a;
+  --color-atomic-green-50: #00bf40;
+  --color-atomic-green-45: #009632;
+  --color-atomic-green-40: #006e25;
+  --color-atomic-green-25: #004517;
+  --color-atomic-green-15: #00240c;
+
+  /* Orange (warning / accent) */
+  --color-atomic-orange-99: #fffcf7;
+  --color-atomic-orange-95: #fef4e6;
+  --color-atomic-orange-90: #fee6c6;
+  --color-atomic-orange-80: #ffd49c;
+  --color-atomic-orange-70: #ffc06e;
+  --color-atomic-orange-60: #ffa938;
+  --color-atomic-orange-50: #ff9200;
+  --color-atomic-orange-45: #d47800;
+  --color-atomic-orange-39: #9c5800;
+  --color-atomic-orange-25: #663a00;
+  --color-atomic-orange-15: #361e00;
+
+  /* Red Orange */
+  --color-atomic-redOrange-99: #fffaf7;
+  --color-atomic-redOrange-95: #feeee5;
+  --color-atomic-redOrange-90: #fedbc6;
+  --color-atomic-redOrange-80: #ffc09c;
+  --color-atomic-redOrange-70: #ff9c63;
+  --color-atomic-redOrange-60: #ff7b2e;
+  --color-atomic-redOrange-50: #ff5e00;
+  --color-atomic-redOrange-48: #f55a00;
+  --color-atomic-redOrange-40: #cc4b00;
+  --color-atomic-redOrange-25: #5c2200;
+
+  /* Lime */
+  --color-atomic-lime-99: #f8fff2;
+  --color-atomic-lime-95: #e6ffd4;
+  --color-atomic-lime-90: #ccfca9;
+  --color-atomic-lime-80: #aef779;
+  --color-atomic-lime-70: #88f03e;
+  --color-atomic-lime-60: #6be016;
+  --color-atomic-lime-55: #58cf04;
+  --color-atomic-lime-50: #48ad00;
+  --color-atomic-lime-37: #347d00;
+
+  /* Cyan */
+  --color-atomic-cyan-99: #f7feff;
+  --color-atomic-cyan-95: #defaff;
+  --color-atomic-cyan-90: #b5f4ff;
+  --color-atomic-cyan-80: #8aedff;
+  --color-atomic-cyan-70: #57dff7;
+  --color-atomic-cyan-60: #28d0ed;
+  --color-atomic-cyan-50: #00bdde;
+  --color-atomic-cyan-40: #0098b2;
+  --color-atomic-cyan-25: #006f82;
+
+  /* Light blue */
+  --color-atomic-lightBlue-99: #f7fdff;
+  --color-atomic-lightBlue-95: #e5f6fe;
+  --color-atomic-lightBlue-90: #c4ecfe;
+  --color-atomic-lightBlue-80: #a1e1ff;
+  --color-atomic-lightBlue-70: #70d2ff;
+  --color-atomic-lightBlue-60: #3dc2ff;
+  --color-atomic-lightBlue-50: #00aeff;
+  --color-atomic-lightBlue-40: #008dcf;
+  --color-atomic-lightBlue-25: #006796;
+
+  /* Violet */
+  --color-atomic-violet-99: #fbfaff;
+  --color-atomic-violet-95: #f0ecfe;
+  --color-atomic-violet-90: #dbd3fe;
+  --color-atomic-violet-80: #c0b0ff;
+  --color-atomic-violet-70: #9e86fc;
+  --color-atomic-violet-60: #7d5ef7;
+  --color-atomic-violet-50: #6541f2;
+  --color-atomic-violet-45: #5b37ed;
+  --color-atomic-violet-40: #4f29e5;
+  --color-atomic-violet-25: #3a16c9;
+
+  /* Purple */
+  --color-atomic-purple-99: #fefbff;
+  --color-atomic-purple-95: #f9edff;
+  --color-atomic-purple-90: #f2d6ff;
+  --color-atomic-purple-80: #e9baff;
+  --color-atomic-purple-70: #de96ff;
+  --color-atomic-purple-60: #d478ff;
+  --color-atomic-purple-50: #cb59ff;
+  --color-atomic-purple-40: #ad36e3;
+  --color-atomic-purple-25: #861cb8;
+
+  /* Pink */
+  --color-atomic-pink-99: #fffafe;
+  --color-atomic-pink-95: #feecfb;
+  --color-atomic-pink-90: #fed3f7;
+  --color-atomic-pink-80: #ffb8f3;
+  --color-atomic-pink-70: #ff94ed;
+  --color-atomic-pink-60: #fa73e3;
+  --color-atomic-pink-50: #f553da;
+  --color-atomic-pink-46: #e846cd;
+  --color-atomic-pink-40: #d331b8;
+
+  /* Opacity tokens (multiply with any atomic base) */
+  --opacity-5: 0.05;
+  --opacity-8: 0.08;
+  --opacity-12: 0.12;
+  --opacity-16: 0.16;
+  --opacity-22: 0.22;
+  --opacity-28: 0.28;
+  --opacity-35: 0.35;
+  --opacity-43: 0.43;
+  --opacity-52: 0.52;
+  --opacity-61: 0.61;
+  --opacity-74: 0.74;
+  --opacity-88: 0.88;
+  --opacity-97: 0.97;
+
+  /* === Semantic — light theme === */
+
+  /* Static (do not theme-flip) */
+  --color-static-white: #ffffff;
+  --color-static-black: #000000;
+
+  /* Primary (brand action) */
+  --color-primary-normal:    #0066ff; /* blue-50 */
+  --color-primary-strong:    #005eeb; /* blue-45 */
+  --color-primary-heavy:     #0054d1; /* blue-40 */
+  --color-primary-soft:      rgba(0, 102, 255, 0.12);
+  --color-primary-faint:     rgba(0, 102, 255, 0.05);
+
+  /* Foreground (text/icon) — these are the primary color tokens you'll use */
+  --color-fg-neutral-primary:    #000000;                       /* fg1 */
+  --color-fg-neutral-strong:     rgba(51, 52, 56, 0.88);        /* fg2 */
+  --color-fg-neutral-normal:     rgba(46, 47, 51, 0.88);        /* body */
+  --color-fg-neutral-alternative:rgba(55, 56, 60, 0.61);        /* fg3 */
+  --color-fg-neutral-assistive:  rgba(55, 56, 60, 0.28);        /* fg4 */
+  --color-fg-neutral-disable:    rgba(55, 56, 60, 0.16);        /* fg5 */
+
+  /* Background */
+  --color-bg-neutral-primary:    #ffffff;
+  --color-bg-neutral-secondary:  #f7f7f8;
+  --color-bg-neutral-tertiary:   #f4f4f5;
+  --color-bg-neutral-alternative:#eaebec;
+  --color-bg-elevated-normal:    #ffffff;
+  --color-bg-elevated-alternative:#f7f7f8;
+
+  /* Line / Stroke */
+  --color-line-normal:        rgba(112, 115, 124, 0.22); /* coolNeutral-50 @ 22% */
+  --color-line-neutral:       rgba(112, 115, 124, 0.16);
+  --color-line-strong:        rgba(112, 115, 124, 0.28);
+  --color-line-heavy:         rgba(112, 115, 124, 0.35);
+
+  /* Status */
+  --color-status-positive:  #00bf40;
+  --color-status-cautionary:#ff9200;
+  --color-status-negative:  #ff4242;
+  --color-status-info:      #0066ff;
+
+  /* Interaction overlays (used as overlay layers on buttons/cards) */
+  --color-interaction-hover:    rgba(112, 115, 124, 0.05);
+  --color-interaction-pressed:  rgba(112, 115, 124, 0.08);
+  --color-interaction-selected: rgba(0, 102, 255, 0.05);
+  --color-interaction-inactive: rgba(112, 115, 124, 0.16);
+  --color-interaction-disable:  rgba(112, 115, 124, 0.08);
+
+  /* Tag / accent fills (12% alpha tints — for badges) */
+  --color-accent-blue-fill:   rgba(0, 102, 255, 0.12);
+  --color-accent-red-fill:    rgba(255, 66, 66, 0.12);
+  --color-accent-green-fill:  rgba(0, 191, 64, 0.12);
+  --color-accent-orange-fill: rgba(255, 146, 0, 0.12);
+  --color-accent-violet-fill: rgba(101, 65, 242, 0.12);
+
+  /* === Type face stacks === */
+  --font-primary: "Pretendard", "Pretendard JP", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --font-display: "Wanted Sans", "Wanted Sans Variable", "Manrope", "Pretendard JP", system-ui, sans-serif;
+  --font-mono:    "SF Mono", "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
+
+  /* === Type ramp === */
+  --display1-size: 56px;       --display1-line: 1.286;  --display1-tracking: -0.0319em;  --display1-weight: 700;
+  --display2-size: 40px;       --display2-line: 1.300;  --display2-tracking: -0.0282em;  --display2-weight: 700;
+  --heading1-size: 22px;       --heading1-line: 1.364;  --heading1-tracking: -0.0194em;  --heading1-weight: 700;
+  --heading2-size: 20px;       --heading2-line: 1.400;  --heading2-tracking: -0.012em;   --heading2-weight: 700;
+  --title1-size:   28px;       --title1-line:   1.358;  --title1-tracking:   -0.024em;   --title1-weight:   700;
+  --title2-size:   36px;       --title2-line:   1.334;  --title2-tracking:   -0.027em;   --title2-weight:   700;
+  --body1-size:    16px;       --body1-line:    1.500;  --body1-tracking:    0.0057em;   --body1-weight:    500;
+  --body1r-size:   16px;       --body1r-line:   1.625;  --body1r-tracking:   0.0057em;   --body1r-weight:   500;
+  --body2-size:    15px;       --body2-line:    1.467;  --body2-tracking:    0.0096em;   --body2-weight:    500;
+  --body2r-size:   15px;       --body2r-line:   1.600;  --body2r-tracking:   0.0096em;   --body2r-weight:   500;
+  --label1-size:   14px;       --label1-line:   1.429;  --label1-tracking:   0.0145em;   --label1-weight:   500;
+  --label1r-size:  14px;       --label1r-line:  1.571;  --label1r-tracking:  0.0145em;   --label1r-weight:  500;
+  --label2-size:   13px;       --label2-line:   1.385;  --label2-tracking:   0.0194em;   --label2-weight:   500;
+  --caption1-size: 12px;       --caption1-line: 1.334;  --caption1-tracking: 0.0252em;   --caption1-weight: 500;
+  --caption2-size: 11px;       --caption2-line: 1.273;  --caption2-tracking: 0.0311em;   --caption2-weight: 500;
+
+  /* === Spacing (8-point grid + 4-point sub-steps) === */
+  --space-2:   2px;
+  --space-4:   4px;
+  --space-6:   6px;
+  --space-8:   8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-128: 128px;
+
+  /* === Radius === */
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-32: 32px;
+  --radius-60: 60px;
+  --radius-pill: 999px;
+
+  /* === Shadows (light theme) === */
+  --shadow-emphasize: 0 4px 6px -1px rgba(23,23,23,.06), 0 2px 4px -2px rgba(23,23,23,.06);
+  --shadow-strong:    0 10px 15px -3px rgba(23,23,23,.07), 0 4px 6px -2px rgba(0,0,0,.07);
+  --shadow-heavy:     0 16px 24px -6px rgba(23,23,23,.08), 0 6px 10px -4px rgba(23,23,23,.08);
+  --shadow-modal:     0 24px 38px -10px rgba(23,23,23,.12), 0 10px 15px -5px rgba(23,23,23,.1);
+
+  /* === Motion === */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+}
+
+/* === Dark theme overrides === */
+:root[data-theme="dark"], .theme-dark {
+  --color-fg-neutral-primary:    #ffffff;
+  --color-fg-neutral-strong:     rgba(247, 247, 248, 0.88);
+  --color-fg-neutral-normal:     rgba(247, 247, 248, 0.78);
+  --color-fg-neutral-alternative:rgba(247, 247, 248, 0.61);
+  --color-fg-neutral-assistive:  rgba(247, 247, 248, 0.28);
+  --color-fg-neutral-disable:    rgba(247, 247, 248, 0.16);
+
+  --color-bg-neutral-primary:    #171719;
+  --color-bg-neutral-secondary:  #1b1c1e;
+  --color-bg-neutral-tertiary:   #212225;
+  --color-bg-neutral-alternative:#292a2d;
+  --color-bg-elevated-normal:    #1b1c1e;
+  --color-bg-elevated-alternative:#212225;
+
+  --color-line-normal:        rgba(174, 176, 182, 0.22);
+  --color-line-neutral:       rgba(174, 176, 182, 0.16);
+  --color-line-strong:        rgba(174, 176, 182, 0.28);
+  --color-line-heavy:         rgba(174, 176, 182, 0.35);
+
+  --color-interaction-hover:    rgba(174, 176, 182, 0.06);
+  --color-interaction-pressed:  rgba(174, 176, 182, 0.10);
+}
+
+/* ============================================================
+   Semantic helpers — short aliases for direct use in HTML
+   ============================================================ */
+
+html, body {
+  font-family: var(--font-primary);
+  font-size: var(--body1-size);
+  line-height: var(--body1-line);
+  letter-spacing: var(--body1-tracking);
+  font-weight: var(--body1-weight);
+  color: var(--color-fg-neutral-primary);
+  background: var(--color-bg-neutral-secondary);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.t-display1 { font-family: var(--font-display); font-size: var(--display1-size); line-height: var(--display1-line); letter-spacing: var(--display1-tracking); font-weight: var(--display1-weight); }
+.t-display2 { font-family: var(--font-display); font-size: var(--display2-size); line-height: var(--display2-line); letter-spacing: var(--display2-tracking); font-weight: var(--display2-weight); }
+.t-title1   { font-family: var(--font-primary); font-size: var(--title1-size);   line-height: var(--title1-line);   letter-spacing: var(--title1-tracking);   font-weight: var(--title1-weight); }
+.t-title2   { font-family: var(--font-primary); font-size: var(--title2-size);   line-height: var(--title2-line);   letter-spacing: var(--title2-tracking);   font-weight: var(--title2-weight); }
+.t-heading1 { font-family: var(--font-primary); font-size: var(--heading1-size); line-height: var(--heading1-line); letter-spacing: var(--heading1-tracking); font-weight: var(--heading1-weight); }
+.t-heading2 { font-family: var(--font-primary); font-size: var(--heading2-size); line-height: var(--heading2-line); letter-spacing: var(--heading2-tracking); font-weight: var(--heading2-weight); }
+.t-body1    { font-family: var(--font-primary); font-size: var(--body1-size);    line-height: var(--body1-line);    letter-spacing: var(--body1-tracking);    font-weight: var(--body1-weight); }
+.t-body1-r  { font-family: var(--font-primary); font-size: var(--body1r-size);   line-height: var(--body1r-line);   letter-spacing: var(--body1r-tracking);   font-weight: var(--body1r-weight); }
+.t-body2    { font-family: var(--font-primary); font-size: var(--body2-size);    line-height: var(--body2-line);    letter-spacing: var(--body2-tracking);    font-weight: var(--body2-weight); }
+.t-label1   { font-family: var(--font-primary); font-size: var(--label1-size);   line-height: var(--label1-line);   letter-spacing: var(--label1-tracking);   font-weight: var(--label1-weight); }
+.t-label2   { font-family: var(--font-primary); font-size: var(--label2-size);   line-height: var(--label2-line);   letter-spacing: var(--label2-tracking);   font-weight: var(--label2-weight); }
+.t-caption1 { font-family: var(--font-primary); font-size: var(--caption1-size); line-height: var(--caption1-line); letter-spacing: var(--caption1-tracking); font-weight: var(--caption1-weight); }
+.t-caption2 { font-family: var(--font-primary); font-size: var(--caption2-size); line-height: var(--caption2-line); letter-spacing: var(--caption2-tracking); font-weight: var(--caption2-weight); }
+.t-mono     { font-family: var(--font-mono); font-size: 14px; line-height: 1.5; letter-spacing: 0; }
+
+.t-fg1 { color: var(--color-fg-neutral-primary); }
+.t-fg2 { color: var(--color-fg-neutral-strong); }
+.t-fg3 { color: var(--color-fg-neutral-alternative); }
+.t-fg4 { color: var(--color-fg-neutral-assistive); }
+.t-primary  { color: var(--color-primary-normal); }
+.t-positive { color: var(--color-status-positive); }
+.t-negative { color: var(--color-status-negative); }
+.t-cautionary { color: var(--color-status-cautionary); }
